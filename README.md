@@ -56,7 +56,26 @@ cd codeatlas/frontend
 npm install
 npm run dev
 ```
-*Frontend will run on `http://localhost:3000`.*
+---
+
+## 🌐 Deploy to Vercel
+
+CodeAtlas is pre-configured with `vercel.json` for 1-click deployment on [Vercel](https://vercel.com).
+
+### Option 1: Deploy Full Monorepo (Frontend + Python API)
+1. Go to [Vercel Dashboard](https://vercel.com/new).
+2. Import repository: `https://github.com/2025sahillund/CodeAtlas`.
+3. Keep default settings (Vercel automatically detects root `vercel.json`).
+4. Click **Deploy**.
+
+### Option 2: Deploy Frontend Only (with External Backend)
+1. Set **Root Directory** to `codeatlas/frontend`.
+2. Framework Preset: **Vite**.
+3. Build Command: `npm run build`.
+4. Output Directory: `dist`.
+5. Under **Environment Variables**, set:
+   - `VITE_API_URL`: Your backend API URL (e.g., `https://codeatlas-backend.onrender.com` or Vercel API endpoint).
+6. Click **Deploy**.
 
 ---
 
